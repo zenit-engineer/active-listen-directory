@@ -11,7 +11,7 @@ public class DirectoryListener extends File {
         try {
             WatchService watchService = FileSystems.getDefault().newWatchService();  // WatchService setup
             /*Make sure the directory you specify exists and that the program has appropriate permissions to access it.*/
-            Path path = Paths.get("C:\\Users\\neziri.zenit\\Desktop\\test"); // Set up the folder path u want to monitor
+            Path path = Paths.get("C:\\Users\\testUser\\Desktop\\test"); // Set up the folder path u want to monitor
             // Register directory with the WatchService instance and specify events to be monitored
             path.register(watchService, StandardWatchEventKinds.ENTRY_CREATE
 //                    StandardWatchEventKinds.ENTRY_DELETE
@@ -31,11 +31,11 @@ public class DirectoryListener extends File {
                     catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    java.io.File f = new java.io.File("C:\\Users\\neziri.zenit\\Desktop\\test\\" +
-                            file.getLastAddedFileName("C:\\Users\\neziri.zenit\\Desktop\\test"));
-                    String deletedFile = file.getLastAddedFileName("C:\\Users\\neziri.zenit\\Desktop\\test");
+                    java.io.File f = new java.io.File("C:\\Users\\testUser\\Desktop\\test\\" +
+                            file.getLastAddedFileName("C:\\Users\\testUser\\Desktop\\test"));
+                    String deletedFile = file.getLastAddedFileName("C:\\Users\\testUser\\Desktop\\test");
                     f.delete();
-                    System.out.println("File: " + deletedFile + " has been deleted from C:\\Users\\neziri.zenit\\Desktop\\test");
+                    System.out.println("File: " + deletedFile + " has been deleted from C:\\Users\\testUser\\Desktop\\test");
                     System.out.println("_________________________________________________________________________________________");
                 }
                 // Reset the key to receive further events
