@@ -34,9 +34,9 @@ public class File {
     }
 
     public void sendEmail() {
-        String toEmail = "neziri.zenit@axians.com";//change accordingly
-        String fromEmail = "zenitneziri@hotmail.com";
-        final String username = "zenitneziri@hotmail.com";//change accordingly
+        String toEmail = "test@hotmail.com";//change accordingly
+        String fromEmail = "test@gmail.com";
+        final String username = "changeaccordingly";//change accordingly
         final String password = "changeaccordingly";//change accordingly
 
         //1) get the session object
@@ -68,8 +68,8 @@ public class File {
             //Attachment body part.
             MimeBodyPart attachment = new MimeBodyPart();
 
-            String nameOfLastFile = getLastAddedFileName("C:\\Users\\neziri.zenit\\Desktop\\test");
-            attachment.attachFile("C:\\Users\\neziri.zenit\\Desktop\\test\\" + nameOfLastFile);
+            String nameOfLastFile = getLastAddedFileName("C:\\Users\\testUser\\Desktop\\test");
+            attachment.attachFile("C:\\Users\\testUser\\Desktop\\test\\" + nameOfLastFile);
 
             //Attach body parts
             emailContent.addBodyPart(textBodyPart);
